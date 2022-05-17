@@ -1,353 +1,353 @@
 <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="32640" Id="11d2086d-96b5-444d-9b81-f6f3cd37b962" Name="Crafting" Enabled="true">
   <Folders>
     <Folder Id="3b0c00b8-90da-45c2-8a85-304927c040d4" Name="Test" Enabled="false">
-      <Folders />
+      <Folders/>
       <Triggers>
         <Trigger Enabled="false" Name="Macro #1 finished with id." Id="e07d5ce2-9f22-4ebd-a667-66e1ec5ed9da" RegularExpression="^\[(?&lt;time&gt;.*)\](?&lt;id&gt;.*)Macro \#1 finished \&lt;se\.1\&gt;$">
           <Actions>
             <Action OrderNumber="1" MessageBoxIconType="Information" MessageBoxText="#${id}#" UseTTSTextExpression="${job}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="MessageBox">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
           </Actions>
-          <Condition Enabled="false" Grouping="Or" />
+          <Condition Enabled="false" Grouping="Or"/>
         </Trigger>
         <Trigger Enabled="false" Name="1" Id="c15ea4fb-1dcc-4269-bd88-b007bbee8af5" RegularExpression="1">
           <Actions>
             <Action OrderNumber="1" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="SystemBeep">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
           </Actions>
-          <Condition Enabled="false" Grouping="Or" />
+          <Condition Enabled="false" Grouping="Or"/>
         </Trigger>
       </Triggers>
     </Folder>
     <Folder Id="9948afe1-0e80-459b-851e-7a4fd59ad510" Name="Utils" Enabled="true">
-      <Folders />
+      <Folders/>
       <Triggers>
         <Trigger Enabled="true" Name="Action - Push food" Id="b0f26580-357b-4d6d-8d62-91835881e671" RegularExpression="ChatLog 00:08B0::You lose the effect of ,*Well Fed\.$">
           <Actions>
             <Action OrderNumber="1" ListVariableOp="Push" ListVariableName="Actions" ListVariableExpression="Food" OBSEndPoint="" TableVariableOp="Set" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable" Asynchronous="False">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="2" OBSEndPoint="" UseTTSTextExpression="push food" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" Enabled="False" ActionType="UseTTS">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
           </Actions>
-          <Condition Enabled="true" Grouping="Or" />
+          <Condition Enabled="true" Grouping="Or"/>
         </Trigger>
         <Trigger Enabled="true" Sequential="True" Name="Status - Stop auto craft" Id="7fad82a9-b6a1-4e1b-997a-1e9fc24fdc50" RegularExpression="ChatLog 00:0038::(?i)stop craft\!(?-i)$">
           <Actions>
             <Action OrderNumber="1" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="SystemBeep">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="2" OBSEndPoint="" VariableOp="SetNumeric" VariableName="RecipeConfigured" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="3" OBSEndPoint="" VariableOp="SetNumeric" VariableName="NumToCraft" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="4" OBSEndPoint="" VariableOp="SetNumeric" VariableName="AutoCraftingEnabled" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="5" OBSEndPoint="" VariableOp="SetNumeric" VariableName="IsCrafting" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
           </Actions>
-          <Condition Enabled="false" Grouping="Or" />
+          <Condition Enabled="false" Grouping="Or"/>
         </Trigger>
         <Trigger Enabled="true" Sequential="True" Name="Status - Craft finished" Id="36b32960-c075-4c65-b45d-605957dfc2f7" RegularExpression="^\[(?&lt;time&gt;.*)\] ChatLog 00:0038::Craft finished \&lt;se\.2\&gt;$">
           <Actions>
             <Action OrderNumber="1" OBSEndPoint="" VariableOp="SetNumeric" VariableName="NumToCraft" VariableExpression="${var:NumToCraft}-1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="2" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" Enabled="False" ActionType="SystemBeep">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="3" OBSEndPoint="" VariableOp="SetNumeric" VariableName="IsCrafting" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" ExecutionDelayExpression="1000" Asynchronous="False">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="4" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" Enabled="False" ActionType="SystemBeep">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="5" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="d0167d07-79a6-4418-bf1e-30cf8d2d817d" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="6" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="172e24bc-8f66-437a-bf42-084b8610eeff" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="7" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="45874764-3061-4b53-a193-d8d2b31d63b8" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
           </Actions>
           <Condition Enabled="true" Grouping="Or">
-            <ConditionSingle Enabled="true" ExpressionL="${var:NumToCraft}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+            <ConditionSingle Enabled="true" ExpressionL="${var:NumToCraft}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreater"/>
           </Condition>
         </Trigger>
         <Trigger Enabled="true" Sequential="True" Name="Recipe - Start Synthesis" Id="d48dd65a-79ff-4aa9-8217-27dd68619798" RegularExpression="">
           <Actions>
             <Action OrderNumber="1" KeyPressExpression="${var:ConfirmKey}" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="KeyPress" ExecutionDelayExpression="500" Asynchronous="False">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
           </Actions>
           <Condition Enabled="true" Grouping="And">
-            <ConditionSingle Enabled="true" ExpressionL="${var:IsCrafting}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+            <ConditionSingle Enabled="true" ExpressionL="${var:IsCrafting}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual"/>
             <ConditionGroup Enabled="true" Grouping="Or">
-              <ConditionSingle Enabled="true" ExpressionL="${lvar:Actions.size}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-              <ConditionSingle Enabled="true" ExpressionL="${elvar:Actions}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+              <ConditionSingle Enabled="true" ExpressionL="${lvar:Actions.size}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual"/>
+              <ConditionSingle Enabled="true" ExpressionL="${elvar:Actions}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase"/>
             </ConditionGroup>
-            <ConditionSingle Enabled="true" ExpressionL="${var:AutoCraftingEnabled}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-            <ConditionSingle Enabled="true" ExpressionL="${var:NumToCraft}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
-            <ConditionSingle Enabled="true" ExpressionL="${var:RecipeConfigured}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+            <ConditionSingle Enabled="true" ExpressionL="${var:AutoCraftingEnabled}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual"/>
+            <ConditionSingle Enabled="true" ExpressionL="${var:NumToCraft}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreater"/>
+            <ConditionSingle Enabled="true" ExpressionL="${var:RecipeConfigured}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual"/>
           </Condition>
         </Trigger>
         <Trigger Enabled="true" Sequential="True" Name="Status - Start auto craft" Id="c0ac3b5e-8316-413b-882f-d03fe0aadc29" RegularExpression="ChatLog 00:0038::(?i)craft (?&lt;num&gt;[0-9]+) (?&lt;item&gt;[a-zA-Z0-9\s]+)\!(?-i)$">
           <Actions>
             <Action OrderNumber="1" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" Enabled="False" ActionType="SystemBeep">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="2" OBSEndPoint="" VariableOp="SetNumeric" VariableName="NumToCraft" VariableExpression="${num}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="3" OBSEndPoint="" VariableOp="SetString" VariableName="ItemToCraft" VariableExpression="${item}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="4" OBSEndPoint="" VariableOp="SetNumeric" VariableName="AutoCraftingEnabled" VariableExpression="1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="5" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="4e6441f0-a0cb-4662-a5db-268d0ce450fc" TriggerForce="regexp" ActionType="Trigger" ExecutionDelayExpression="1000">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="6" MessageBoxText="${num}, ${item}" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" Enabled="False" ActionType="MessageBox">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
           </Actions>
-          <Condition Enabled="false" Grouping="Or" />
+          <Condition Enabled="false" Grouping="Or"/>
         </Trigger>
         <Trigger Enabled="true" Name="Open crafting log" Id="4e6441f0-a0cb-4662-a5db-268d0ce450fc" RegularExpression="">
           <Actions>
             <Action OrderNumber="1" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" Enabled="False" ActionType="SystemBeep">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="2" KeyPressExpression="${var:CraftingLogKey}" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="KeyPress" ExecutionDelayExpression="1000" Asynchronous="False">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="3" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="1630aaa6-14b8-4084-9aaa-d84252a9f0dc" TriggerForce="regexp" ActionType="Trigger" ExecutionDelayExpression="1000">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
           </Actions>
-          <Condition Enabled="false" Grouping="Or" />
+          <Condition Enabled="false" Grouping="Or"/>
         </Trigger>
         <Trigger Enabled="true" Name="Recipe - Find" Id="1630aaa6-14b8-4084-9aaa-d84252a9f0dc" RegularExpression="">
           <Actions>
             <Action OrderNumber="1" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" Enabled="False" ActionType="SystemBeep" ExecutionDelayExpression="1000" Asynchronous="False">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="2" KeyPressExpression="${var:CycleNextKey}" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="KeyPress" ExecutionDelayExpression="random(1500,2500)" Asynchronous="False">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="3" KeyPressExpression="${var:CycleNextKey}" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="KeyPress" ExecutionDelayExpression="50" Asynchronous="False">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="4" KeyPressExpression="${var:CycleNextKey}" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="KeyPress" ExecutionDelayExpression="50" Asynchronous="False">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="5" KeyPressExpression="${var:CycleNextKey}" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="KeyPress" ExecutionDelayExpression="50" Asynchronous="False">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="6" KeyPressExpression="${var:CycleNextKey}" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="KeyPress" ExecutionDelayExpression="50" Asynchronous="False">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="7" KeyPressExpression="${var:CycleNextKey}" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="KeyPress" ExecutionDelayExpression="50" Asynchronous="False">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="8" KeyPressExpression="${var:CycleNextKey}" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="KeyPress" ExecutionDelayExpression="50" Asynchronous="False">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="9" KeyPressExpression="${var:CycleNextKey}" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="KeyPress" ExecutionDelayExpression="50" Asynchronous="False">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="10" KeyPressExpression="${var:CycleNextKey}" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="KeyPress" ExecutionDelayExpression="50" Asynchronous="False">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="11" KeyPressExpression="${var:CycleNextKey}" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="KeyPress" ExecutionDelayExpression="50" Asynchronous="False">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="12" KeyPressExpression="${var:CycleNextKey}" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="KeyPress" ExecutionDelayExpression="50" Asynchronous="False">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="13" KeyPressExpression="${var:CycleNextKey}" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="KeyPress" ExecutionDelayExpression="50" Asynchronous="False">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="14" KeyPressExpression="${var:CycleNextKey}" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="KeyPress" ExecutionDelayExpression="50" Asynchronous="False">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="15" KeyPressExpression="${var:ConfirmKey}" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="KeyPress" ExecutionDelayExpression="100" Asynchronous="False">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="16" KeyPressExpression="${var:ItemToCraft}" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="KeyPress" ExecutionDelayExpression="1000" Asynchronous="False">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="17" KeyPressExpression="{ENTER}" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="KeyPress" ExecutionDelayExpression="2000" Asynchronous="False">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="18" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" Enabled="False" ActionType="SystemBeep" Asynchronous="False">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="19" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="172e24bc-8f66-437a-bf42-084b8610eeff" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
           </Actions>
-          <Condition Enabled="false" Grouping="Or" />
+          <Condition Enabled="false" Grouping="Or"/>
         </Trigger>
         <Trigger Enabled="true" Sequential="True" Name="Status - Last Craft finished" Id="d0167d07-79a6-4418-bf1e-30cf8d2d817d" RegularExpression="">
           <Actions>
             <Action OrderNumber="1" OBSEndPoint="" VariableOp="SetNumeric" VariableName="AutoCraftEnabled" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="2" OBSEndPoint="" UseTTSTextExpression="Finished!" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="3" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="2130e3a4-f64c-4c91-9a1a-4a19cd6adae4" TriggerForce="regexp" ActionType="Trigger">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
           </Actions>
           <Condition Enabled="true" Grouping="Or">
-            <ConditionSingle Enabled="true" ExpressionL="${var:NumToCraft}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+            <ConditionSingle Enabled="true" ExpressionL="${var:NumToCraft}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual"/>
           </Condition>
         </Trigger>
         <Trigger Enabled="true" Sequential="True" Name="Recipe - Select last" Id="172e24bc-8f66-437a-bf42-084b8610eeff" RegularExpression="">
           <Actions>
             <Action OrderNumber="1" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" Enabled="False" ActionType="SystemBeep">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="2" OBSEndPoint="" VariableOp="SetNumeric" VariableName="IsCrafting" VariableExpression="1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="3" KeyPressExpression="${var:ConfirmKey}" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="KeyPress" ExecutionDelayExpression="random(1500,2500)" Asynchronous="False">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="4" KeyPressExpression="${var:LeftKey}" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" Enabled="False" ActionType="KeyPress" ExecutionDelayExpression="500" Asynchronous="False">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="5" KeyPressExpression="${var:LeftKey}" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" Enabled="False" ActionType="KeyPress" ExecutionDelayExpression="200" Asynchronous="False">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="6" KeyPressExpression="${var:ConfirmKey}" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" Enabled="False" ActionType="KeyPress" ExecutionDelayExpression="500" Asynchronous="False">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="7" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" Enabled="False" ActionType="SystemBeep">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="8" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="671cc96b-c925-486d-8af7-4bf35a5a828d" TriggerForce="regexp" ActionType="Trigger">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="9" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="d48dd65a-79ff-4aa9-8217-27dd68619798" TriggerForce="regexp" ActionType="Trigger">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
           </Actions>
           <Condition Enabled="true" Grouping="And">
-            <ConditionSingle Enabled="true" ExpressionL="${var:IsCrafting}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+            <ConditionSingle Enabled="true" ExpressionL="${var:IsCrafting}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual"/>
             <ConditionGroup Enabled="true" Grouping="Or">
-              <ConditionSingle Enabled="true" ExpressionL="${lvar:Actions.size}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-              <ConditionSingle Enabled="true" ExpressionL="${elvar:Actions}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase" />
+              <ConditionSingle Enabled="true" ExpressionL="${lvar:Actions.size}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual"/>
+              <ConditionSingle Enabled="true" ExpressionL="${elvar:Actions}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="StringEqualNocase"/>
             </ConditionGroup>
-            <ConditionSingle Enabled="true" ExpressionL="${var:AutoCraftingEnabled}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-            <ConditionSingle Enabled="true" ExpressionL="${var:NumToCraft}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
+            <ConditionSingle Enabled="true" ExpressionL="${var:AutoCraftingEnabled}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual"/>
+            <ConditionSingle Enabled="true" ExpressionL="${var:NumToCraft}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreater"/>
           </Condition>
-          <Conditions />
+          <Conditions/>
         </Trigger>
       </Triggers>
     </Folder>
     <Folder Id="a2ac245d-2883-4498-bf46-ff096cd6798c" Name="Startup" Enabled="true">
-      <Folders />
+      <Folders/>
       <Triggers>
         <Trigger Enabled="true" Name="Settings - Crafting" Id="9474cb62-b9f9-4683-8316-78b541caf32e" RegularExpression="">
           <Actions>
             <Action OrderNumber="1" OBSEndPoint="" VariableOp="SetString" VariableName="FoodKey" VariableExpression="{3}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="2" OBSEndPoint="" VariableOp="SetString" VariableName="M1Key" VariableExpression="{%1}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Description="Macro 1 Key Bind">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="3" OBSEndPoint="" VariableOp="SetString" VariableName="M2Key" VariableExpression="{%2}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Description="Macro 2 Key Bind">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="4" OBSEndPoint="" VariableOp="SetString" VariableName="ConfirmKey" VariableExpression="{-}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Description="Macro 2 Key Bind">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="5" OBSEndPoint="" VariableOp="SetString" VariableName="CancelKey" VariableExpression="{=}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Description="Macro 2 Key Bind">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="6" OBSEndPoint="" VariableOp="SetString" VariableName="LeftKey" VariableExpression="{[}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Description="Macro 2 Key Bind">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="7" OBSEndPoint="" VariableOp="SetString" VariableName="RightKey" VariableExpression="{]}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Description="Macro 2 Key Bind">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="8" OBSEndPoint="" VariableOp="SetString" VariableName="UpKey" VariableExpression="^{[}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Description="Macro 2 Key Bind">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="9" OBSEndPoint="" VariableOp="SetString" VariableName="DownKey" VariableExpression="^{]}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Description="Macro 2 Key Bind">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="10" OBSEndPoint="" VariableOp="SetString" VariableName="CraftingLogKey" VariableExpression="{n}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Description="Macro 2 Key Bind">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="11" OBSEndPoint="" VariableOp="SetString" VariableName="CycleNextKey" VariableExpression="^{-}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Description="Macro 2 Key Bind">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="12" OBSEndPoint="" VariableOp="SetString" VariableName="CyclePrevKey" VariableExpression="^{=}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Description="Macro 2 Key Bind">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
           </Actions>
-          <Condition Enabled="false" Grouping="Or" />
+          <Condition Enabled="false" Grouping="Or"/>
         </Trigger>
         <Trigger Enabled="true" Name="Init" Id="2130e3a4-f64c-4c91-9a1a-4a19cd6adae4" RegularExpression="">
           <Actions>
             <Action OrderNumber="1" OBSEndPoint="" VariableOp="SetNumeric" VariableName="NumToCraft" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="2" ListVariableName="Actions" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="3" OBSEndPoint="" VariableOp="SetNumeric" VariableName="AutoCraftingEnabled" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="4" OBSEndPoint="" VariableOp="SetNumeric" VariableName="IsCrafting" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="5" OBSEndPoint="" VariableOp="SetNumeric" VariableName="RecipeConfigured" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
           </Actions>
-          <Condition Enabled="false" Grouping="Or" />
+          <Condition Enabled="false" Grouping="Or"/>
         </Trigger>
       </Triggers>
     </Folder>
     <Folder Id="399e7c8f-8144-46fd-a22c-48761cc9dc58" Name="Actions" Enabled="true">
-      <Folders />
+      <Folders/>
       <Triggers>
         <Trigger Enabled="true" Sequential="True" Name="Action - Refresh food" Id="45874764-3061-4b53-a193-d8d2b31d63b8" RegularExpression="" Description="If !IsCrafting &amp;&amp; Actions[1] == &quot;Food&quot;, refresh food and pop Actions.">
           <Actions>
             <Action OrderNumber="1" OBSEndPoint="" VariableOp="SetNumeric" VariableName="RecipeConfigured" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="2" KeyPressExpression="{ESC}" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="KeyPress" ExecutionDelayExpression="random(1000,1500)" Asynchronous="False">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="3" KeyPressExpression="${var:FoodKey}" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="KeyPress" ExecutionDelayExpression="random(1500,2500)" Asynchronous="False">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="4" ListVariableOp="PopFirst" ListVariableName="Actions" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable" Asynchronous="False">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
             <Action OrderNumber="5" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="4e6441f0-a0cb-4662-a5db-268d0ce450fc" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
-              <Condition Enabled="false" Grouping="Or" />
+              <Condition Enabled="false" Grouping="Or"/>
             </Action>
           </Actions>
           <Condition Enabled="true" Grouping="And">
-            <ConditionSingle Enabled="true" ExpressionL="${var:IsCrafting}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-            <ConditionSingle Enabled="true" ExpressionL="${lvar:Actions[1]}" ExpressionTypeL="String" ExpressionR="Food" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+            <ConditionSingle Enabled="true" ExpressionL="${var:IsCrafting}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual"/>
+            <ConditionSingle Enabled="true" ExpressionL="${lvar:Actions[1]}" ExpressionTypeL="String" ExpressionR="Food" ExpressionTypeR="String" ConditionType="StringEqualCase"/>
           </Condition>
         </Trigger>
       </Triggers>
@@ -355,129 +355,129 @@
     <Folder Id="ee8cb776-a601-4710-826e-b12a6f9c4a0f" Name="Recipes" Enabled="true">
       <Folders>
         <Folder Id="25fac393-0c48-42f2-9615-b931df2747b8" Name="Diff 2925/Dur 35" Enabled="false">
-          <Folders />
+          <Folders/>
           <Triggers>
             <Trigger Enabled="true" Sequential="True" Name="Step 1 Diff 2925/Dur 35" Id="890ed419-7b23-4654-95b7-32e94ad73fbe" RegularExpression="You begin( trial )?synthesis of a .*(?i)((Mempisang Lumber)|(Lunar Adamantite Ingot)|(Rhodium Ingot)|(Amynodon Leather)|(Golden Silk)|(Hannish Fiber))(?-i)\.">
               <Actions>
                 <Action OrderNumber="1" OBSEndPoint="" VariableOp="SetNumeric" VariableName="IsCrafting" VariableExpression="1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
-                  <Condition Enabled="false" Grouping="Or" />
+                  <Condition Enabled="false" Grouping="Or"/>
                 </Action>
                 <Action OrderNumber="2" KeyPressExpression="%1" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="KeyPress" ExecutionDelayExpression="2500" Asynchronous="False">
-                  <Condition Enabled="false" Grouping="Or" />
+                  <Condition Enabled="false" Grouping="Or"/>
                 </Action>
                 <Action OrderNumber="3" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="0bf15b35-6d4e-4b3f-8204-980091b40676" TriggerForce="regexp" ActionType="Trigger">
-                  <Condition Enabled="false" Grouping="Or" />
+                  <Condition Enabled="false" Grouping="Or"/>
                 </Action>
               </Actions>
               <Condition Enabled="true" Grouping="And">
-                <ConditionSingle Enabled="true" ExpressionL="${var:NumToCraft}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
-                <ConditionSingle Enabled="true" ExpressionL="${var:AutoCraftingEnabled}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                <ConditionSingle Enabled="true" ExpressionL="${var:NumToCraft}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreater"/>
+                <ConditionSingle Enabled="true" ExpressionL="${var:AutoCraftingEnabled}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual"/>
               </Condition>
             </Trigger>
             <Trigger Enabled="true" Sequential="True" Name="Step 2 Diff 2925/Dur 35" Id="0bf15b35-6d4e-4b3f-8204-980091b40676" RegularExpression="">
               <Actions>
                 <Action OrderNumber="1" KeyPressExpression="%2" KeyPressCode="116" KeyPressWindow="^Test.txt - Notepad$" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="KeyPress" ExecutionDelayExpression="2500" Asynchronous="False">
-                  <Condition Enabled="false" Grouping="Or" />
+                  <Condition Enabled="false" Grouping="Or"/>
                 </Action>
               </Actions>
               <Condition Enabled="true" Grouping="Or">
-                <ConditionSingle Enabled="true" ExpressionL="${var:AutoCraftingEnabled}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                <ConditionSingle Enabled="true" ExpressionL="${var:AutoCraftingEnabled}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual"/>
               </Condition>
             </Trigger>
           </Triggers>
         </Folder>
         <Folder Id="6e934c87-2999-468d-afd4-1d5483c6cccc" Name="Diff 1300/Dur 40" Enabled="false">
-          <Folders />
+          <Folders/>
           <Triggers>
             <Trigger Enabled="true" Sequential="True" Name="Step 1 Diff 1300/Dur 40" Id="826bf377-a3e5-4ab2-bb78-e65d15a29ee3" RegularExpression="You begin(( trial synthesis)|( synthesizing)).*(?i)((Grade 5 Strength Alkahest)|(Grade 5 Dexterity Alkahest)|(Grade 5 Intelligence Alkahest)|(Grade 5 Mind Alkahest))(?-i)\.">
               <Actions>
                 <Action OrderNumber="1" OBSEndPoint="" VariableOp="SetNumeric" VariableName="IsCrafting" VariableExpression="1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
-                  <Condition Enabled="false" Grouping="Or" />
+                  <Condition Enabled="false" Grouping="Or"/>
                 </Action>
                 <Action OrderNumber="2" KeyPressExpression="%5" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="KeyPress" ExecutionDelayExpression="2500" Asynchronous="False">
-                  <Condition Enabled="false" Grouping="Or" />
+                  <Condition Enabled="false" Grouping="Or"/>
                 </Action>
               </Actions>
               <Condition Enabled="true" Grouping="And">
-                <ConditionSingle Enabled="true" ExpressionL="${var:NumToCraft}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
-                <ConditionSingle Enabled="true" ExpressionL="${var:AutoCraftingEnabled}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
+                <ConditionSingle Enabled="true" ExpressionL="${var:NumToCraft}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreater"/>
+                <ConditionSingle Enabled="true" ExpressionL="${var:AutoCraftingEnabled}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual"/>
               </Condition>
             </Trigger>
           </Triggers>
         </Folder>
         <Folder Id="1d0a5178-0d9b-48c7-a551-b8c707c2c044" Name="Diff 3900/Dur 70" Enabled="true">
-          <Folders />
+          <Folders/>
           <Triggers>
             <Trigger Enabled="true" Sequential="True" Name="Step 1 Diff 3900/Dur 70" Id="de823f18-6dac-430e-998e-4f299926a3e7" RegularExpression="You begin(( trial synthesis)|( synthesizing)).*(?i)Grade 6 Tinctures of ((Strength)|(Dexterity)|(Vitality)|(Intelligence)|(Mind))(?-i)\.">
               <Actions>
                 <Action OrderNumber="1" OBSEndPoint="" VariableOp="SetNumeric" VariableName="IsCrafting" VariableExpression="1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
-                  <Condition Enabled="false" Grouping="Or" />
+                  <Condition Enabled="false" Grouping="Or"/>
                 </Action>
                 <Action OrderNumber="2" KeyPressExpression="%{q}" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="KeyPress" ExecutionDelayExpression="2500" Asynchronous="False">
-                  <Condition Enabled="false" Grouping="Or" />
+                  <Condition Enabled="false" Grouping="Or"/>
                 </Action>
               </Actions>
               <Condition Enabled="true" Grouping="And">
-                <ConditionSingle Enabled="true" ExpressionL="${var:NumToCraft}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreater" />
-                <ConditionSingle Enabled="true" ExpressionL="${var:AutoCraftingEnabled}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                <ConditionSingle Enabled="true" ExpressionL="${var:ItemToCraft}" ExpressionTypeL="String" ExpressionR="^Grade 6 Tincture of (Strength|Dexterity|Vitality|Intelligence|Mind)$" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                <ConditionSingle Enabled="true" ExpressionL="${var:NumToCraft}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericGreater"/>
+                <ConditionSingle Enabled="true" ExpressionL="${var:AutoCraftingEnabled}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual"/>
+                <ConditionSingle Enabled="true" ExpressionL="${var:ItemToCraft}" ExpressionTypeL="String" ExpressionR="^Grade 6 Tincture of (Strength|Dexterity|Vitality|Intelligence|Mind)$" ExpressionTypeR="String" ConditionType="RegexMatch"/>
               </Condition>
-              <Conditions />
+              <Conditions/>
             </Trigger>
             <Trigger Enabled="true" Sequential="True" Name="Step 2 Diff 3900/Dur 70" Id="d99cfdaf-1cb0-48bd-8c40-f41d2218e573" RegularExpression="^\[(?&lt;time&gt;.*)\] ChatLog 00:0038::Macro #1 finished &lt;se.1&gt;$">
               <Actions>
                 <Action OrderNumber="1" KeyPressExpression="%{w}" KeyPressCode="116" KeyPressWindow="^Test.txt - Notepad$" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="KeyPress" ExecutionDelayExpression="500" Asynchronous="False">
-                  <Condition Enabled="false" Grouping="Or" />
+                  <Condition Enabled="false" Grouping="Or"/>
                 </Action>
               </Actions>
               <Condition Enabled="true" Grouping="And">
-                <ConditionSingle Enabled="true" ExpressionL="${var:IsCrafting}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                <ConditionSingle Enabled="true" ExpressionL="${var:AutoCraftingEnabled}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                <ConditionSingle Enabled="true" ExpressionL="${var:ItemToCraft}" ExpressionTypeL="String" ExpressionR="^Grade 6 Tincture of (Strength|Dexterity|Vitality|Intelligence|Mind)$" ExpressionTypeR="String" ConditionType="RegexMatch" />
+                <ConditionSingle Enabled="true" ExpressionL="${var:IsCrafting}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual"/>
+                <ConditionSingle Enabled="true" ExpressionL="${var:AutoCraftingEnabled}" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual"/>
+                <ConditionSingle Enabled="true" ExpressionL="${var:ItemToCraft}" ExpressionTypeL="String" ExpressionR="^Grade 6 Tincture of (Strength|Dexterity|Vitality|Intelligence|Mind)$" ExpressionTypeR="String" ConditionType="RegexMatch"/>
               </Condition>
-              <Conditions />
+              <Conditions/>
             </Trigger>
             <Trigger Enabled="true" Name="Config recipe" Id="671cc96b-c925-486d-8af7-4bf35a5a828d" RegularExpression="">
               <Actions>
                 <Action OrderNumber="1" KeyPressExpression="${var:UpKey}" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="KeyPress" ExecutionDelayExpression="500" Asynchronous="False">
-                  <Condition Enabled="false" Grouping="Or" />
+                  <Condition Enabled="false" Grouping="Or"/>
                 </Action>
                 <Action OrderNumber="2" KeyPressExpression="${var:UpKey}" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="KeyPress" ExecutionDelayExpression="500" Asynchronous="False">
-                  <Condition Enabled="false" Grouping="Or" />
+                  <Condition Enabled="false" Grouping="Or"/>
                 </Action>
                 <Action OrderNumber="3" KeyPressExpression="${var:RightKey}" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="KeyPress" ExecutionDelayExpression="500" Asynchronous="False">
-                  <Condition Enabled="false" Grouping="Or" />
+                  <Condition Enabled="false" Grouping="Or"/>
                 </Action>
                 <Action OrderNumber="4" KeyPressExpression="${var:RightKey}" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="KeyPress" ExecutionDelayExpression="500" Asynchronous="False">
-                  <Condition Enabled="false" Grouping="Or" />
+                  <Condition Enabled="false" Grouping="Or"/>
                 </Action>
                 <Action OrderNumber="5" KeyPressExpression="${var:ConfirmKey}" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="KeyPress" ExecutionDelayExpression="500" Asynchronous="False">
-                  <Condition Enabled="false" Grouping="Or" />
+                  <Condition Enabled="false" Grouping="Or"/>
                 </Action>
                 <Action OrderNumber="6" KeyPressExpression="${var:DownKey}" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="KeyPress" ExecutionDelayExpression="500" Asynchronous="False">
-                  <Condition Enabled="false" Grouping="Or" />
+                  <Condition Enabled="false" Grouping="Or"/>
                 </Action>
                 <Action OrderNumber="7" KeyPressExpression="${var:DownKey}" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="KeyPress" ExecutionDelayExpression="500" Asynchronous="False">
-                  <Condition Enabled="false" Grouping="Or" />
+                  <Condition Enabled="false" Grouping="Or"/>
                 </Action>
                 <Action OrderNumber="8" OBSEndPoint="" VariableOp="SetNumeric" VariableName="RecipeConfigured" VariableExpression="1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
-                  <Condition Enabled="false" Grouping="Or" />
+                  <Condition Enabled="false" Grouping="Or"/>
                 </Action>
                 <Action OrderNumber="9" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="d48dd65a-79ff-4aa9-8217-27dd68619798" TriggerForce="regexp" ActionType="Trigger">
-                  <Condition Enabled="false" Grouping="Or" />
+                  <Condition Enabled="false" Grouping="Or"/>
                 </Action>
               </Actions>
               <Condition Enabled="true" Grouping="And">
-                <ConditionSingle Enabled="true" ExpressionL="${var:ItemToCraft}" ExpressionTypeL="String" ExpressionR="^Grade 6 Tincture of (Strength|Dexterity|Vitality|Intelligence|Mind)$" ExpressionTypeR="String" ConditionType="RegexMatch" />
-                <ConditionSingle Enabled="true" ExpressionL="${var:RecipeConfigured}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericEqual" />
+                <ConditionSingle Enabled="true" ExpressionL="${var:ItemToCraft}" ExpressionTypeL="String" ExpressionR="^Grade 6 Tincture of (Strength|Dexterity|Vitality|Intelligence|Mind)$" ExpressionTypeR="String" ConditionType="RegexMatch"/>
+                <ConditionSingle Enabled="true" ExpressionL="${var:RecipeConfigured}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="String" ConditionType="NumericEqual"/>
               </Condition>
-              <Conditions />
+              <Conditions/>
             </Trigger>
           </Triggers>
         </Folder>
       </Folders>
-      <Triggers />
+      <Triggers/>
     </Folder>
   </Folders>
-  <Triggers />
+  <Triggers/>
 </Folder>
