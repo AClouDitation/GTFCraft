@@ -125,7 +125,7 @@
             </Actions>
             <Condition Enabled="false" Grouping="Or" />
           </Trigger>
-          <Trigger Enabled="true" Name="Open crafting log" Id="4e6441f0-a0cb-4662-a5db-268d0ce450fc" RegularExpression="">
+          <Trigger Enabled="true" Sequential="True" Name="Recipe - Open crafting log" Id="4e6441f0-a0cb-4662-a5db-268d0ce450fc" RegularExpression="">
             <Actions>
               <Action OrderNumber="1" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" Enabled="False" ActionType="SystemBeep">
                 <Condition Enabled="false" Grouping="Or" />
@@ -222,7 +222,7 @@
               <Action OrderNumber="1" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" Enabled="False" ActionType="SystemBeep">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="2" OBSEndPoint="" VariableOp="SetNumeric" VariableName="IsCrafting" VariableExpression="1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
+              <Action OrderNumber="2" OBSEndPoint="" VariableOp="SetNumeric" VariableName="IsCrafting" VariableExpression="1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
               <Action OrderNumber="3" KeyPressExpression="${var:ConfirmKey}" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="KeyPress" ExecutionDelayExpression="random(1500,2500)" Asynchronous="False">
@@ -240,10 +240,10 @@
               <Action OrderNumber="7" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" Enabled="False" ActionType="SystemBeep">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="8" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="671cc96b-c925-486d-8af7-4bf35a5a828d" TriggerForce="regexp" ActionType="Trigger">
+              <Action OrderNumber="8" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="671cc96b-c925-486d-8af7-4bf35a5a828d" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="9" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="d48dd65a-79ff-4aa9-8217-27dd68619798" TriggerForce="regexp" ActionType="Trigger">
+              <Action OrderNumber="9" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="d48dd65a-79ff-4aa9-8217-27dd68619798" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
             </Actions>
@@ -342,7 +342,7 @@
               <Action OrderNumber="4" ListVariableOp="PopFirst" ListVariableName="Actions" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable" Asynchronous="False">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
-              <Action OrderNumber="5" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="4e6441f0-a0cb-4662-a5db-268d0ce450fc" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
+              <Action OrderNumber="5" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="4e6441f0-a0cb-4662-a5db-268d0ce450fc" TriggerForce="regexp" ActionType="Trigger" ExecutionDelayExpression="2500" Asynchronous="False">
                 <Condition Enabled="false" Grouping="Or" />
               </Action>
             </Actions>
@@ -462,7 +462,7 @@
                   <Action OrderNumber="8" OBSEndPoint="" VariableOp="SetNumeric" VariableName="RecipeConfigured" VariableExpression="1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="9" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="d48dd65a-79ff-4aa9-8217-27dd68619798" TriggerForce="regexp" ActionType="Trigger">
+                  <Action OrderNumber="9" OBSEndPoint="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="d48dd65a-79ff-4aa9-8217-27dd68619798" TriggerForce="regexp" ActionType="Trigger" Asynchronous="False">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
